@@ -1,4 +1,4 @@
-//Adapted from Canvas Paint Application adapted from: https://www.html5canvastutorials.com/labs/html5-canvas-paint-application
+//Canvas Paint Application adapted from: https://www.html5canvastutorials.com/labs/html5-canvas-paint-application
 var canvas = document.getElementById("myCanvas");
 var ctx = canvas.getContext("2d");
 
