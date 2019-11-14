@@ -1,20 +1,11 @@
-# adapted from: 
-# https://abndistro.com/post/2019/01/20/using-flask-to-deploy-predictive-models/
+# Adapted from: https://www.palletsprojects.com/p/flask
+# Run the app: env FLASK_APP=webapp.py flask run
+import flask as fl
 
-# app.py
-from flask import Flask, escape, request
+app = fl.Flask(__name__)
 
-app = Flask(__name__)
-
+# Request default resource
 @app.route('/')
-def hello_world():
-    return 'Hello world 1\n'
+def home():
+    return app.send_static_file("recognise.html")
 
-# adapted from https://palletsprojects.com/p/flask/
-@app.route('/hello')
-def hello():
-    name = request.args.get("name", "World 2")
-    return f'Hello, {escape(name)}!'
-
-if __name__ == '__main__':
-    app.run()
