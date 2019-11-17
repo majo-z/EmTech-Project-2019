@@ -3,16 +3,12 @@ $(document).ready(function() {
   const MAIN_MOUSE_BUTTON = 0;
 
   function prepareContext(canvasElement) {
-    // set the size of the drawingBuffer
-    let dpr = window.devicePixelRatio || 1;
     //Return the size of an element and its position relative to the viewport
     let rect = canvasElement.getBoundingClientRect();
-    canvasElement.width = rect.width * dpr;
-    canvasElement.height = rect.height * dpr;
-    
+    canvasElement.width = rect.width;
+    canvasElement.height = rect.height;
+
     let context = canvasElement.getContext("2d");
-    context.scale(dpr, dpr);
-    
     return context;
   }
 
@@ -25,7 +21,7 @@ $(document).ready(function() {
 
   let clearButton = document.getElementById("clearButton");
   let submitButton = document.getElementById("submitButton");
-  let myCanvas = document.getElementById("myCanvas");
+  let myCanvas = document.getElementById("myCanvas"); 
   let theContext = prepareContext(myCanvas);
   let shouldDraw = false;
 
@@ -39,6 +35,21 @@ $(document).ready(function() {
   });
   function clearCanvas(context) {
     context.clearRect(0, 0, context.canvas.width, context.canvas.height);  
+  }
+
+  submitButton.addEventListener("click", event => {
+    event.preventDefault();
+    submitData(theContext);
+  });
+  function submitData(context) {
+    context = myCanvas;
+    console.log(context.toDataURL());
+
+    var dataURL = context.toDataURL();
+    $.post("/upload_image", { the_image: dataURL }, function (data) {
+      // Update the text area with the image.
+      $("#generatedImage").text("Generated Image: " + data.message);
+    });
   }
 
   function start(event) {
