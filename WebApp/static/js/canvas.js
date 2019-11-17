@@ -43,8 +43,10 @@ $(document).ready(function() {
   });
   function submitData(context) {
     context = myCanvas;
-    console.log(context.toDataURL());
+    //console.log(context.toDataURL());
 
+    // Send AJAX request for image from the server
+    //https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement/toDataURL
     var dataURL = context.toDataURL();
     $.post("/upload_image", { the_image: dataURL }, function (data) {
       // Update the text area with the image.
