@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<!-- Canvas Paint Application adapted from: https://www.html5canvastutorials.com/labs/html5-canvas-paint-application -->
 <!-- Bootstrap adapted from: https://getbootstrap.com/docs/4.3/getting-started/introduction -->
+<!-- Bootstrap grid adapted from: https://getbootstrap.com/docs/4.3/layout/grid -->
 <html lang="en">
 
 <head>
@@ -15,27 +15,48 @@
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
 
   <!-- My CSS file -->
-  <link rel="stylesheet" href="css/styles.css?v=1.0" />
+  <link rel="stylesheet" href="static/css/styles.css?v=1.0" />
 </head>
 
 <body class="text-center">
-  <h1>Digit Recogniser</h1>
-  <p>Some Text</p>
+  <div class="container-fluid">
 
-  <div class="container">
-    <div id="paint">
-      <canvas id="myCanvas"></canvas>
+    <div class="row">
+      <div class="col"></div>
+      <div class="col-6">
+        <h1>Digit Recogniser</h1>
+        <p>Draw number from 0 to 9</p>
+      </div>
+      <div class="col"></div>
     </div>
 
     <div class="row">
-        <div class="col">
-          <button type="button" class="btn btn-primary">Primary</button>
-        </div>
-        <div class="col"></div>
-        <div class="col">
-          <button type="button" class="btn btn-primary">Primary</button>
-        </div>
+      <div class="col"></div>
+      <div class="col-6">
+        <canvas id="myCanvas">
+          Sorry, your browser doesn't support the &lt;canvas&gt; element.
+        </canvas>
       </div>
+      <div class="col"></div>
+    </div>
+
+    <div class="row">
+      <div class="col"></div>
+      <div class="col-3">
+        <input class="btn btn-primary btn-lg" id="submitButton" type="submit" value="Submit">
+        <input class="btn btn-secondary btn-lg" id="clearButton" type="submit" value="Clear">
+      </div>
+      <div class="col"></div>
+    </div>
+
+    <div class="row">
+      <div class="col"></div>
+      <div class="col-3">
+        <p id="generatedImage"></p>
+      </div>
+      <div class="col"></div>
+    </div>
+
   </div>
 
   <!-- jQuery, Popper.js, Bootstrap JS -->
@@ -52,7 +73,7 @@
     crossorigin="anonymous"></script>
 
   <!-- My js scripts -->
-  <script src="js/canvas.js"></script>
+  <script src="static/js/canvas.js"></script>
 </body>
 
 </html>
