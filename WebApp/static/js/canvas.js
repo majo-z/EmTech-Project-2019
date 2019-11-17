@@ -1,48 +1,69 @@
-//Canvas Paint Application adapted from: https://www.html5canvastutorials.com/labs/html5-canvas-paint-application
-var canvas = document.getElementById("myCanvas");
-var ctx = canvas.getContext("2d");
+//Adapted from: https://medium.com/@zxlee618/drawing-on-a-html-canvas-b7566624b17f
+$(document).ready(function() {
+  const MAIN_MOUSE_BUTTON = 0;
 
-var painting = document.getElementById("paint");
-var paint_style = getComputedStyle(painting);
-canvas.width = parseInt(paint_style.getPropertyValue("width"));
-canvas.height = parseInt(paint_style.getPropertyValue("height"));
+  function prepareContext(canvasElement) {
+    // set the size of the drawingBuffer
+    let dpr = window.devicePixelRatio || 1;
+    //Return the size of an element and its position relative to the viewport
+    let rect = canvasElement.getBoundingClientRect();
+    canvasElement.width = rect.width * dpr;
+    canvasElement.height = rect.height * dpr;
+    
+    let context = canvasElement.getContext("2d");
+    context.scale(dpr, dpr);
+    
+    return context;
+  }
 
-var mouse = { x: 0, y: 0 };
+  function setLineProperties(context) {
+    context.lineWidth = 4;
+    context.lineJoin = "round";
+    context.lineCap = "round";
+    return context;
+  }
 
-canvas.addEventListener(
-  "mousemove",
-  function(e) {
-    mouse.x = e.pageX - this.offsetLeft;
-    mouse.y = e.pageY - this.offsetTop;
-  },
-  false
-);
+  let clearButton = document.getElementById("clearButton");
+  let submitButton = document.getElementById("submitButton");
+  let myCanvas = document.getElementById("myCanvas");
+  let theContext = prepareContext(myCanvas);
+  let shouldDraw = false;
 
-ctx.lineWidth = 3;
-ctx.lineJoin = "round";
-ctx.lineCap = "round";
-ctx.strokeStyle = "#00CC99";
+  myCanvas.addEventListener("mousedown", start);
+  myCanvas.addEventListener("mouseup", end);
+  myCanvas.addEventListener("mousemove", move, false);
 
-canvas.addEventListener(
-  "mousedown",
-  function(e) {
-    ctx.beginPath();
-    ctx.moveTo(mouse.x, mouse.y);
+  clearButton.addEventListener("click", event => {
+    event.preventDefault();
+    clearCanvas(theContext);
+  });
+  function clearCanvas(context) {
+    context.clearRect(0, 0, context.canvas.width, context.canvas.height);  
+  }
 
-    canvas.addEventListener("mousemove", onPaint, false);
-  },
-  false
-);
+  function start(event) {
+    if (event.button === MAIN_MOUSE_BUTTON) {
+      shouldDraw = true;
+      setLineProperties(theContext);
 
-canvas.addEventListener(
-  "mouseup",
-  function() {
-    canvas.removeEventListener("mousemove", onPaint, false);
-  },
-  false
-);
+      theContext.beginPath();
+      
+      let elementRect = event.target.getBoundingClientRect();
+      theContext.moveTo(event.clientX - elementRect.left, event.clientY - elementRect.top);
+    }
+  }
 
-var onPaint = function() {
-  ctx.lineTo(mouse.x, mouse.y);
-  ctx.stroke();
-};
+  function end(event) {
+    if (event.button === MAIN_MOUSE_BUTTON) {
+      shouldDraw = false;
+    }
+  }
+
+  function move(event) {
+    if (shouldDraw) {
+      let elementRect = event.target.getBoundingClientRect();
+      theContext.lineTo(event.clientX - elementRect.left, event.clientY - elementRect.top);
+      theContext.stroke();
+    }
+  }
+});
