@@ -13,15 +13,17 @@ $(document).ready(function() {
   }
 
   function setLineProperties(context) {
-    context.lineWidth = 4;
+    context.lineWidth = 15;
     context.lineJoin = "round";
     context.lineCap = "round";
+    context.strokeStyle = "white"; //change line color
     return context;
   }
 
   let clearButton = document.getElementById("clearButton");
   let submitButton = document.getElementById("submitButton");
   let myCanvas = document.getElementById("myCanvas"); 
+  myCanvas.style.backgroundColor = "#003366"; //change canvas background
   let theContext = prepareContext(myCanvas);
   let shouldDraw = false;
 
