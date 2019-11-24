@@ -13,7 +13,7 @@ app = fl.Flask(__name__)
 # Request default resource
 @app.route('/')
 def home():
-    return app.send_static_file("recognise.html")
+    return app.send_static_file("index.html")
 
 # Add a route for generating image
 @app.route('/upload_image', methods=['GET', 'POST'])
