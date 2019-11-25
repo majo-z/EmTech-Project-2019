@@ -67,6 +67,8 @@ https://www.youtube.com/watch?v=tXVNS-V39A0
 
 https://keras.io
 
+https://keras.io/layers/convolutional/
+
 https://en.wikipedia.org/wiki/Keras
 
 https://www.i2tutorials.com/deep-learning-interview-questions-and-answers/what-is-the-difference-between-keras-and-tensorflow
@@ -89,24 +91,36 @@ https://machinelearningmastery.com/how-to-develop-a-convolutional-neural-network
 
 https://towardsdatascience.com/image-classification-in-10-minutes-with-mnist-dataset-54c35b77a38d
 
+https://machinelearningmastery.com/how-to-develop-a-convolutional-neural-network-from-scratch-for-mnist-handwritten-digit-classification
+
+https://machinelearningmastery.com/handwritten-digit-recognition-using-convolutional-neural-networks-python-keras
+
+https://www.analyticsvidhya.com/blog/2017/05/25-must-know-terms-concepts-for-beginners-in-deep-learning
+
+https://medium.com/@afozbek_/how-to-train-a-model-with-mnist-dataset-d79f8123ba84
+
+https://keras.io/layers/convolutional
+
 https://medium.com/coinmonks/handwritten-digit-prediction-using-convolutional-neural-networks-in-tensorflow-with-keras-and-live-5ebddf46dc8
 
 https://medium.com/coinmonks/deploy-your-first-deep-learning-neural-network-model-using-flask-keras-tensorflow-in-python-f4bb7309fc49
 
 https://medium.com/@ashok.tankala/build-the-mnist-model-with-your-own-handwritten-digits-using-tensorflow-keras-and-python-f8ec9f871fd3
 
-https://medium.com/@ashok.tankala/building-digit-prediction-web-application-using-tensorflow-with-keras-and-flask-19f8bbdaec0b
-
 https://www.sitepoint.com/keras-digit-recognition-tutorial
-
-https://stackoverflow.com/questions/2976452
 
 https://machinelearningmastery.com/how-to-develop-a-convolutional-neural-network-from-scratch-for-mnist-handwritten-digit-classification
 
-https://machinelearningmastery.com/rectified-linear-activation-function-for-deep-learning-neural-networks
+https://www.geeksforgeeks.org/activation-functions-neural-networks
 
 https://machinelearningmastery.com/handwritten-digit-recognition-using-convolutional-neural-networks-python-keras
 
-https://medium.com/@afozbek_/how-to-train-a-model-with-mnist-dataset-d79f8123ba84
+https://towardsdatascience.com/machine-learning-fundamentals-via-linear-regression-41a5d11f5220
 
-https://www.analyticsvidhya.com/blog/2017/05/25-must-know-terms-concepts-for-beginners-in-deep-learning
+https://medium.com/@ashok.tankala/building-digit-prediction-web-application-using-tensorflow-with-keras-and-flask-19f8bbdaec0b
+
+https://towardsdatascience.com/writing-your-first-neural-net-in-less-than-30-lines-of-code-with-keras-18e160a35502
+
+https://medium.com/@ashok.tankala/build-your-first-deep-learning-neural-network-model-using-keras-tensorflow-in-python-a3e76a6b3ccb
+
+https://adeshpande3.github.io/A-Beginner%27s-Guide-To-Understanding-Convolutional-Neural-Networks-Part-2
