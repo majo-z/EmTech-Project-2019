@@ -53,7 +53,7 @@ https://pillow.readthedocs.io/en/stable/reference/Image.html
 
 https://note.nkmk.me/en/python-pillow-invert
 
-### TensorFlow
+### Tensorflow
 
 https://www.tensorflow.org
 
@@ -67,15 +67,11 @@ https://www.youtube.com/watch?v=tXVNS-V39A0
 
 https://keras.io
 
-https://keras.io/layers/convolutional/
-
 https://en.wikipedia.org/wiki/Keras
 
 https://www.i2tutorials.com/deep-learning-interview-questions-and-answers/what-is-the-difference-between-keras-and-tensorflow
 
 https://www.infoworld.com/article/3336192/what-is-keras-the-deep-neural-network-api-explained.html
-
-https://stackoverflow.com/questions/46495215/what-is-the-difference-between-x-train-and-x-test-in-keras
 
 ### MNIST
 
@@ -87,7 +83,13 @@ https://machinelearningmastery.com/handwritten-digit-recognition-using-convoluti
 
 https://machinelearningmastery.com/how-to-develop-a-convolutional-neural-network-from-scratch-for-mnist-handwritten-digit-classification
 
-### Machine learning
+### Matplotlib
+
+https://matplotlib.org/3.1.1/api/_as_gen/matplotlib.pyplot.subplot.html
+
+https://stackoverflow.com/questions/3584805/in-matplotlib-what-does-the-argument-mean-in-fig-add-subplot111
+
+### Machine Learning
 
 https://towardsdatascience.com/image-classification-in-10-minutes-with-mnist-dataset-54c35b77a38d
 
