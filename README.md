@@ -115,6 +115,10 @@ https://machinelearningmastery.com/how-to-develop-a-convolutional-neural-network
 
 https://www.geeksforgeeks.org/activation-functions-neural-networks
 
+https://elitedatascience.com/overfitting-in-machine-learning
+
+https://machinelearningmastery.com/how-to-one-hot-encode-sequence-data-in-python
+
 https://machinelearningmastery.com/handwritten-digit-recognition-using-convolutional-neural-networks-python-keras
 
 https://towardsdatascience.com/machine-learning-fundamentals-via-linear-regression-41a5d11f5220
@@ -122,6 +126,8 @@ https://towardsdatascience.com/machine-learning-fundamentals-via-linear-regressi
 https://medium.com/@ashok.tankala/building-digit-prediction-web-application-using-tensorflow-with-keras-and-flask-19f8bbdaec0b
 
 https://towardsdatascience.com/writing-your-first-neural-net-in-less-than-30-lines-of-code-with-keras-18e160a35502
+
+https://towardsdatascience.com/understanding-neural-networks-from-neuron-to-rnn-cnn-and-deep-learning-cd88e90e0a90
 
 https://medium.com/@ashok.tankala/build-your-first-deep-learning-neural-network-model-using-keras-tensorflow-in-python-a3e76a6b3ccb
 
