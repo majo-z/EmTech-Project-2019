@@ -69,6 +69,10 @@ https://keras.io
 
 https://en.wikipedia.org/wiki/Keras
 
+https://keras.io/losses
+
+https://keras.io/metrics
+
 https://www.i2tutorials.com/deep-learning-interview-questions-and-answers/what-is-the-difference-between-keras-and-tensorflow
 
 https://www.infoworld.com/article/3336192/what-is-keras-the-deep-neural-network-api-explained.html
@@ -116,6 +120,8 @@ https://machinelearningmastery.com/how-to-develop-a-convolutional-neural-network
 https://www.geeksforgeeks.org/activation-functions-neural-networks
 
 https://elitedatascience.com/overfitting-in-machine-learning
+
+https://machinelearningmastery.com/adam-optimization-algorithm-for-deep-learning
 
 https://machinelearningmastery.com/how-to-one-hot-encode-sequence-data-in-python
 
