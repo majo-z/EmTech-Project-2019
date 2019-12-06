@@ -1,11 +1,11 @@
-# Adapted from: https://www.palletsprojects.com/p/flask
+# Adapted from: 
+# Ian McLoughlin's videos
+# https://github.com/Verdagio/Tensorflow-keras-flask-app
 # Run the app: env FLASK_APP=webapp.py flask run
 
 import flask as fl
 # For decoding images
 import base64
-# For image manipulation
-from PIL import Image, ImageOps 
 # For saving, reading, and resizing images
 import cv2
 # For working with arrays
@@ -44,9 +44,13 @@ def predictNumber(file):
     # https://stackoverflow.com/a/50377181
     K.clear_session()
     
+    # call init
     model, graph = init()
     with graph.as_default():
-        prediction = model.predict(file) # try now to predict using our pre trained model
+        prediction = model.predict(file)
+        # try now to predict using our pre trained model
+        # Returns the indices of the maximum values along an axis
+        # https://docs.scipy.org/doc/numpy/reference/generated/numpy.argmax.html
         response = np.array_str(np.argmax(prediction, axis=1))
     
     return response
@@ -61,14 +65,17 @@ def uploaded():
      # read the file in greyscale mode using 0
     img = cv2.imread("../data/img/decoded_img.png", 0)
     # resize the image to 28 * 28
-    img = cv2.resize(img,(28,28))
+    img = cv2.resize(img,(28, 28))
 
     # Give a new shape to an array without changing its data
     # convert the data to float so it can be divided it by 255
-    newImg = np.ndarray.flatten(np.array(img)).reshape(1, 784).astype('float32')
+    newImg = np.ndarray.flatten(np.array(img)).reshape(1, 28, 28, 1).astype('float32')
 
     # divide by 255 to make it 0 or 1
     newImg /= 255
 
-    return {"message": "Hello"} # send the image back to client side
+    # Call predictNumber function
+    response = predictNumber(newImg)
+
+    return response
 

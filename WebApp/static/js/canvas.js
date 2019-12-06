@@ -54,10 +54,10 @@ $(document).ready(function() {
     $.post("/uploadFile", { the_image: img })
       .done (function (data) {
         // Update the text h1 tag with the image.
-       $("#generatedImage").text("Generated Image: " + data.message);
+       $("#predictedNumber").text("Prediction: " + data);
       })
       .fail(function(err) {
-        $("#generatedImage").text("Something went wrong... " + err);
+        $("#predictedNumber").text("Something went wrong... " + err);
       });
     }); //submitButton
 
