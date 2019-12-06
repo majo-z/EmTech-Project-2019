@@ -39,17 +39,32 @@ def imageParser(data):
     with open("../data/img/decoded_img.png", "wb") as f:
       f.write(decoded_img)
 
+# predict the number 
+def predictNumber(file):
+    # https://stackoverflow.com/a/50377181
+    K.clear_session()
+    
+    model, graph = init()
+    with graph.as_default():
+        prediction = model.predict(file) # try now to predict using our pre trained model
+        response = np.array_str(np.argmax(prediction, axis=1))
+    
+    return response
+
 @app.route('/uploadFile', methods = ['POST'])
 def uploaded():
 
     # reads the buffered incoming data from the client into one bytestring
     # https://tedboy.github.io/flask/generated/generated/flask.Request.get_data.html
     imageParser(fl.request.get_data())
-    img = cv2.imread("../data/img/decoded_img.png", 0)    # read the file in greyscale
-    img = cv2.resize(img,(28,28))                          # resize the image to 28 * 28
+    
+     # read the file in greyscale mode using 0
+    img = cv2.imread("../data/img/decoded_img.png", 0)
+    # resize the image to 28 * 28
+    img = cv2.resize(img,(28,28))
 
-    # Gives a new shape to an array without changing its data
-    # convert the data to float so we can divide it by 255
+    # Give a new shape to an array without changing its data
+    # convert the data to float so it can be divided it by 255
     newImg = np.ndarray.flatten(np.array(img)).reshape(1, 784).astype('float32')
 
     # divide by 255 to make it 0 or 1
