@@ -6,8 +6,6 @@ import flask as fl
 import base64
 # For image manipulation
 from PIL import Image, ImageOps 
-# For regular expressions
-import re
 # For saving, reading, and resizing images
 import cv2
 # For working with arrays
@@ -47,6 +45,15 @@ def uploaded():
     # reads the buffered incoming data from the client into one bytestring
     # https://tedboy.github.io/flask/generated/generated/flask.Request.get_data.html
     imageParser(fl.request.get_data())
+    img = cv2.imread("../data/img/decoded_img.png", 0)    # read the file in greyscale
+    img = cv2.resize(img,(28,28))                          # resize the image to 28 * 28
+
+    # Gives a new shape to an array without changing its data
+    # convert the data to float so we can divide it by 255
+    newImg = np.ndarray.flatten(np.array(img)).reshape(1, 784).astype('float32')
+
+    # divide by 255 to make it 0 or 1
+    newImg /= 255
 
     return {"message": "Hello"} # send the image back to client side
 
