@@ -4,9 +4,19 @@
 import flask as fl
 # For decoding images
 import base64
-
 # For image manipulation
 from PIL import Image, ImageOps 
+# For regular expressions
+import re
+# For saving, reading, and resizing images
+import cv2
+# For working with arrays
+import numpy as np
+# For using Keras backend
+from keras import backend as K
+# For working with the model
+import tensorflow as tf
+import keras as kr
 
 app = fl.Flask(__name__)
 
@@ -14,6 +24,13 @@ app = fl.Flask(__name__)
 @app.route('/', methods=['GET'])
 def home():
     return app.send_static_file("index.html")
+
+#load up our previously trained model
+def init():
+    model = kr.models.load_model("./data/models/modelCNN.h5")
+    graph = tf.get_default_graph()
+
+    return model, graph
 
 # Add a route for generating image
 @app.route('/upload_image', methods=['GET', 'POST'])
