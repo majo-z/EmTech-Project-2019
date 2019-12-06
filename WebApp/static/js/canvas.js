@@ -51,7 +51,7 @@ $(document).ready(function() {
     // console.log(img);
     
     //https://api.jquery.com/jQuery.post/
-    $.post("/upload_image", { the_image: img })
+    $.post("/uploadFile", { the_image: img })
       .done (function (data) {
         // Update the text h1 tag with the image.
        $("#generatedImage").text("Generated Image: " + data.message);

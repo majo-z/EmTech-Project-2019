@@ -25,36 +25,28 @@ app = fl.Flask(__name__)
 def home():
     return app.send_static_file("index.html")
 
-#load up our previously trained model
+# load up previously trained model
 def init():
-    model = kr.models.load_model("./data/models/modelCNN.h5")
+    model = kr.models.load_model("../data/models/modelCNN.h5")
     graph = tf.get_default_graph()
-
     return model, graph
 
-# Add a route for generating image
-@app.route('/upload_image', methods=['GET', 'POST'])
-def upload_image():
-  # Get the image fromthe request
-  myImage = fl.request.values.get("the_image", "")
-  
-  # Print image to the console
-  print(myImage)
+def imageParser(data):
+    # Get the image fromthe request
+    canvasImg = fl.request.values.get("the_image", "")
+    # Decode the string to an image
+    # https://stackoverflow.com/questions/16214190/how-to-convert-base64-string-to-image
+    decoded_img = base64.b64decode(canvasImg[22:]) # first 22 chars have to be cut off
+    # save image as png
+    with open("../data/img/decoded_img.png", "wb") as f:
+      f.write(decoded_img)
 
-  # Decode the string to an image
-  # https://stackoverflow.com/questions/16214190/how-to-convert-base64-string-to-image
-  decoded_img = base64.b64decode(myImage[22:]) # first 22 chars have to be cut off
-  
-  # Save the image
-  with open("decoded_img.png", "wb") as f:
-    
-    f.write(decoded_img)
-  
-  # https://note.nkmk.me/en/python-pillow-invert
-  decoded_img = Image.open("decoded_img.png").convert('L')
-  decoded_img_invert = ImageOps.invert(decoded_img)
-  decoded_img_invert.save('decoded_img_invert.png')
+@app.route('/uploadFile', methods = ['POST'])
+def uploaded():
 
-  # Generate and respond with the image
-  return {"message": myImage} # send the image back to client side
+    # reads the buffered incoming data from the client into one bytestring
+    # https://tedboy.github.io/flask/generated/generated/flask.Request.get_data.html
+    imageParser(fl.request.get_data())
+
+    return {"message": "Hello"} # send the image back to client side
 
