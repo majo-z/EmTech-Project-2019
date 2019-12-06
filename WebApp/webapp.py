@@ -11,7 +11,7 @@ from PIL import Image, ImageOps
 app = fl.Flask(__name__)
 
 # Request default resource
-@app.route('/')
+@app.route('/', methods=['GET'])
 def home():
     return app.send_static_file("index.html")
 

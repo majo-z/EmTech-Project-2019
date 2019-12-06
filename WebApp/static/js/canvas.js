@@ -21,7 +21,6 @@ $(document).ready(function() {
   }
 
   let clearButton = document.getElementById("clearButton");
-  let submitButton = document.getElementById("submitButton");
   let myCanvas = document.getElementById("myCanvas"); 
   myCanvas.style.backgroundColor = "#003366"; //change canvas background
   let theContext = prepareContext(myCanvas);
@@ -39,22 +38,28 @@ $(document).ready(function() {
     context.clearRect(0, 0, context.canvas.width, context.canvas.height);  
   }
 
-  submitButton.addEventListener("click", event => {
-    event.preventDefault();
-    submitData(theContext);
-  });
-  function submitData(context) {
-    context = myCanvas;
-    //console.log(context.toDataURL());
-
+  $("#submitButton").click(function (e) {
+    // Prevent the form actually submitting.
+    e.preventDefault();
+    
+    // Initialise canvas
+    canvas = myCanvas;
+  
     // Send AJAX request for image from the server
-    //https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement/toDataURL
-    var dataURL = context.toDataURL();
-    $.post("/upload_image", { the_image: dataURL }, function (data) {
-      // Update the text area with the image.
-      $("#generatedImage").text("Generated Image: " + data.message);
-    });
-  }
+    // https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement/toDataURL
+    var img = canvas.toDataURL();
+    // console.log(img);
+    
+    //https://api.jquery.com/jQuery.post/
+    $.post("/upload_image", { the_image: img })
+      .done (function (data) {
+        // Update the text h1 tag with the image.
+       $("#generatedImage").text("Generated Image: " + data.message);
+      })
+      .fail(function(err) {
+        $("#generatedImage").text("Something went wrong... " + err);
+      });
+    }); //submitButton
 
   function start(event) {
     if (event.button === MAIN_MOUSE_BUTTON) {
