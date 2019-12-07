@@ -1,9 +1,127 @@
-# EmTech-Project-2019
-Emerging Technologies Assessment 2019
+# Emerging Technologies Project
+
+My name is Marian and I am 4th year software development student at GMIT.
+Objectives of this project were to:
+
+1. Create and train a model that recognises hand-written digits using the MNIST dataset using the Keras and Jupyter Python packages. 
+2. Create a web application that allows a user to draw a digit using their mouse or touchscreen device.
+3. Submit the drawing for recognition to the trained model.
+
+The project consists of:
+
+- [Jupyter Notebook](https://jupyter.org/) that explains the technology behind collecting of datasets; building, training, evaluating, verifying and saving the neural network model.
+- data/img folder that contains 10 of my own images for verifying the trained model in the jupyter notebook. The img folder is also used for storing the drawn picture for recognition.
+- data/models folder used for storing the trained model.
+- data/notebook containing of pictures that are used in jupyter notebook.
+- index.html that includes HTML5 canvas for drawing the digits, submit and clear button, h tag that holds the prediction message, title, paragraph with instructions, references to my css and javascript scripts and Bootstrap with reference links and my own bootstrap styling.
+- index.js JavaScript that works behind the html in order to create and style the canvas, create the mouse movement events, clear the canvas event, submit the button asynchronous event and errors that may occur during the application running.
+- styles.css script that styles various html components, such as background color, canvas size, font size & colour, margins etc.
+- [Flask](https://www.palletsprojects.com/p/flask/) web application written in Python language that uses various python packages for manipulating / interacting  with the drawn pictures and the model. Flask also contains a built-in wrapper for generating routes in the form of @app.route('/'), where @app is the name of the object containing our Flask app. The web app is responsible for decoding the string representation of image to actual image, saving it to hard drive, opening it and submitting it to the model for recognition.
+
+# Technologies Used
+
+- Jupyter Notebook
+- Python
+- Flask application framework
+- HTML5
+- JavaScript
+- Jquery
+- Bootstrap
+- CSS
+- GitHub
+- Visual Studio Code with built in terminal
+- Firefox browser
 
 # Environment Setup
 
-# How To Run
+To be able to run the code in this repository, you must have a Python language installed on your device. The easiest way is to install [Anaconda Distribution](https://www.anaconda.com/), which is a open source platform that contains all necessary machine learning packages and a lot more.
+
+After successful installation, you should be able to run conda on you terminal. Conda is an open source package management system and environment management system that quickly installs, runs and updates packages and their dependencies and it is a part of Anaconda Distribution.
+
+The following commands will help you to check and install all necessary packages that are needed in this project and have Anaconda up to date. Note, that these commands only work on Windows.
+
+Open the Command line or Anaconda prompt(part of Anaconda Distribution):
+
+1. Get all the current environment details
+
+```bash
+> conda info
+```
+
+2. Get the name, version, build & channel details of all the packages installed.
+
+```bash
+> conda list
+```
+
+3. Get the Python version.
+
+```bash
+> conda list python
+```
+
+4. Get the Python environment
+
+```bash
+> which python
+```
+
+5. Update all packaages including anaconda, conda, python, anaconda-navigator
+
+```bash
+> conda update --all
+```
+
+6. To make sure you have all necessary packages installed, run the following command
+
+```bash
+> conda install keras opencv matplotlib tensorflow numpy pillow
+```
+
+# How to Download and Run the application
+
+The repository can be found at https://github.com/majo-z/EmTech-Project-2019. To run the code in this repository, yuo should have [Git](https://git-scm.com/) installed on your machine.
+The alternative way is to download the zipped version by clicking on "Clone or download" button, choose "Download ZIP" and un-zip it to your desired location. I will concentrate on cloning the project using Git.
+
+1. Open the Git Bash and clone the repository
+
+```bash
+> git clone https://github.com/majo-z/EmTech-Project-2019
+```
+
+2. Change into the folder
+
+```bash
+> cd EmTech-Project-2019
+```
+
+3. Change into the folder
+
+```bash
+> cd WebApp
+```
+
+4. Run the webapp
+
+```bash
+> env FLASK_APP=webapp.py flask run
+the webapp.py is now running on the background
+```
+
+5. Navigate to your browser and type in the address bar:
+
+```bash
+> localhost:5000
+or
+> 127.0.0.1:5000
+```
+
+6. To close the program
+
+```bash
+> exit the browser
+>in the command line: crtl+c
+```
 
 # References:
 
@@ -40,6 +158,8 @@ Emerging Technologies Assessment 2019
 *https://runawayhorse001.github.io/PythonTipsDS/deploy.html*
 
 *https://github.com/Verdagio/Tensorflow-keras-flask-app*
+
+*https://hackersandslackers.com/flask-routes*
 
 *https://stackoverflow.com/a/16214280*
 
@@ -138,3 +258,7 @@ Emerging Technologies Assessment 2019
 *https://towardsdatascience.com/understanding-neural-networks-from-neuron-to-rnn-cnn-and-deep-learning-cd88e90e0a90*
 
 *https://adeshpande3.github.io/A-Beginner%27s-Guide-To-Understanding-Convolutional-Neural-Networks-Part-2*
+
+# Contact: 
+
+G0340481@gmit.ie
