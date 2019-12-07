@@ -55,7 +55,7 @@ def uploaded():
     print(canvasImg)
 
     # Decode the string to an image
-    # https://stackoverflow.com/questions/16214190/how-to-convert-base64-string-to-image
+    # https://stackoverflow.com/a/16214280
     # first 22 chars have to be cut off (ex. data:image/png;base64,<actual image starts here>)
     decoded_img = base64.b64decode(canvasImg[22:])
 
