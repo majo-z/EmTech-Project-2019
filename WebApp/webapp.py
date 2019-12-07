@@ -37,15 +37,15 @@ def predictNumber(file):
     # call init
     model = init()
 
-    prediction = model.predict(file)
     # try now to predict using our pre trained model
+    prediction = model.predict(file)
     # Returns the indices of the maximum values along an axis
     # https://docs.scipy.org/doc/numpy/reference/generated/numpy.argmax.html
     response = np.array_str(np.argmax(prediction, axis=1))
 
     return response
 
-
+# save img, load & prepare image, call prediction
 @app.route('/uploadFile', methods=['POST'])
 def uploaded():
     # Get the image from the request
