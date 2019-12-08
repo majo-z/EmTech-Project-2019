@@ -147,6 +147,10 @@ or
 
 *https://api.jquery.com/jQuery.post*
 
+*https://api.jquery.com/empty*
+
+*https://stackoverflow.com/a/25096037*
+
 *https://www.w3schools.com/css/*
 
 ### Python / Flask
