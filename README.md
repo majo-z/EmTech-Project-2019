@@ -3,20 +3,21 @@
 My name is Marian and I am 4th year software development student at GMIT.
 Objectives of this project were to:
 
-1. Create and train a model that recognises hand-written digits using the MNIST dataset using the Keras and Jupyter Python packages. 
+1. Create and train a model that recognises hand-written digits using the MNIST dataset using the Keras and Jupyter Python packages.
+
 2. Create a web application that allows a user to draw a digit using their mouse or touchscreen device.
 3. Submit the drawing for recognition to the trained model.
 
 The project consists of:
 
-- [Jupyter Notebook](https://jupyter.org/) that explains the technology behind collecting of datasets; building, training, evaluating, verifying and saving the neural network model.
-- data/img folder that contains 10 of my own images for verifying the trained model in the jupyter notebook. The img folder is also used for storing the drawn picture for recognition.
+- [Jupyter Notebook](https://jupyter.org/) that explains the technology behind collecting of datasets: building, training, evaluating, verifying and saving the neural network model.
+- data/img folder that contains 10 of my own images for verifying the trained model in the jupyter notebook. The img folder is also used for storing the drawn picture that is going to be evaluated by the trained model.
 - data/models folder used for storing the trained model.
 - data/notebook containing of pictures that are used in jupyter notebook.
-- index.html that includes HTML5 canvas for drawing the digits, submit and clear button, h tag that holds the prediction message, title, paragraph with instructions, references to my css and javascript scripts and Bootstrap with reference links and my own bootstrap styling.
+- index.html that includes HTML5 canvas for drawing the digits, submit and clear button, h tag that holds the recognition message, title, paragraph with instructions, references to my css and javascript scripts and Bootstrap with reference links and my own bootstrap styling.
 - index.js JavaScript that works behind the html in order to create and style the canvas, create the mouse movement events, clear the canvas event, submit the button asynchronous event and errors that may occur during the application running.
 - styles.css script that styles various html components, such as background color, canvas size, font size & colour, margins etc.
-- [Flask](https://www.palletsprojects.com/p/flask/) web application written in Python language that uses various python packages for manipulating / interacting  with the drawn pictures and the model. Flask also contains a built-in wrapper for generating routes in the form of @app.route('/'), where @app is the name of the object containing our Flask app. The web app is responsible for decoding the string representation of image to actual image, saving it to hard drive, opening it and submitting it to the model for recognition.
+- [Flask](https://www.palletsprojects.com/p/flask/) web application written in Python language that uses various python packages for manipulating / interacting  with the drawn pictures and the model. Flask also contains a built-in wrapper for generating routes in the form of @app.route('/'), where @app is the name of the object containing our Flask app. The web app is responsible for decoding the string representation of image to actual image, saving it to hard drive, opening it and submitting it to the trained model for recognition.
 
 # Technologies Used
 
@@ -34,11 +35,11 @@ The project consists of:
 
 # Environment Setup
 
-To be able to run the code in this repository, you must have a Python language installed on your device. The easiest way is to install [Anaconda Distribution](https://www.anaconda.com/), which is a open source platform that contains all necessary machine learning packages and a lot more.
+To be able to run the code in this repository, you must have a Python language installed on your device. The easiest way is to install [Anaconda Distribution](https://www.anaconda.com/), which is a open source platform that consits of all necessary machine learning packages and a lot more.
 
 After successful installation, you should be able to run conda on you terminal. Conda is an open source package management system and environment management system that quickly installs, runs and updates packages and their dependencies and it is a part of Anaconda Distribution.
 
-The following commands will help you to check and install all necessary packages that are needed in this project and have Anaconda up to date. Note, that these commands only work on Windows.
+The following commands will help you to check and install all essential packages that are required for the project to run and keeping Anaconda up to date. Note, that these commands only work on Windows.
 
 Open the Command line or Anaconda prompt(part of Anaconda Distribution):
 
@@ -72,7 +73,7 @@ Open the Command line or Anaconda prompt(part of Anaconda Distribution):
 > conda update --all
 ```
 
-6. To make sure you have all necessary packages installed, run the following command
+6. To make sure you have all essential packages installed, run the following command
 
 ```bash
 > conda install keras opencv matplotlib tensorflow numpy pillow
